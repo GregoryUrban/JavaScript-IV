@@ -34,7 +34,7 @@ class Instructor extends Person {
     demo (subject) {
         return (`Today we are learning about ${this.favLanguage}`)
     }
-    grade (student, subject) {
+    grader (student, subject) {
         return (`${maebel.name} receives a perfect score on ${this.favLanguage}`)
     }
 }
@@ -51,7 +51,7 @@ const carolanne = new Instructor ({
 
 console.log(carolanne);
 console.log(carolanne.demo());
-console.log(carolanne.grade())
+console.log(carolanne.grader())
 
 
 
@@ -74,7 +74,13 @@ class Student extends Person {
     sprintChallenge (subject) {
         return (`${this.name} has begun sprint challenge on ${this.favSubjects}`)
     }
+    
+    grade (max) {
+        return Math.floor(Math.random() * Math.floor(max));
+        // return (`${maebel.name} receives a perfect score on ${this.favLanguage}`)
+    }
 }
+
 
 const benson = new Student ({
     name: 'Benson',
@@ -93,6 +99,7 @@ console.log(benson);
 console.log(benson.listsSubjects());
 console.log(benson.PRAssignment())
 console.log(benson.sprintChallenge())
+console.log(benson.grade(100))
 
 
 class ProjectManagers extends Instructor {
@@ -127,6 +134,6 @@ const greg = new ProjectManagers ({
 
 console.log(greg);
 console.log(greg.demo());
-// console.log(greg.grade())
+console.log(greg.grader())
 console.log(greg.standUp())
 console.log(greg.debugsCode())
